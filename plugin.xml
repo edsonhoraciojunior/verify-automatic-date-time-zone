@@ -22,7 +22,7 @@
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="verify-automatic-date-time-zone"
-    version="2.0.3-dev">
+    version="1.0.0-dev">
     <name>Verify Automatic Date, Time and Timezone</name>
     <description>Verify Automatic Date, Time and Timezone</description>
     <license>MIT</license>
