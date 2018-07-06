@@ -21,50 +21,52 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-device"
+    id="verify-automatic-date-time-zone"
     version="2.0.3-dev">
-    <name>Device</name>
-    <description>Cordova Device Plugin</description>
-    <license>Apache 2.0</license>
-    <keywords>cordova,device</keywords>
+    <name>Verify Automatic Date, Time and Timezone</name>
+    <description>Verify Automatic Date, Time and Timezone</description>
+    <license>MIT</license>
+    <keywords>automatic,date,time,timezone,settings</keywords>
     <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git</repo>
-    <issue>https://issues.apache.org/jira/browse/CB/component/12320648</issue>
+    <!-- <issue>https://issues.apache.org/jira/browse/CB/component/12320648</issue> -->
 
-    <js-module src="www/device.js" name="device">
-        <clobbers target="device" />
+    <js-module src="www/verifyAutomaticDateTimeZone.js" name="verifyAutomaticDateTimeZone">
+        <clobbers target="VerifyAutomaticDateTimeZone" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Device" >
-                <param name="android-package" value="org.apache.cordova.device.Device"/>
+            <feature name="VerifyAutomaticDateTimeZone" >
+                <!-- <param name="android-package" value="org.apache.cordova.device.Device"/> -->
+                <param name="android-package" value="com.edsonhoraciojunior.verifyautomaticdatetimezone.VerifyAutomaticDateTimeZone"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/Device.java" target-dir="src/org/apache/cordova/device" />
+        <!-- <source-file src="src/android/Device.java" target-dir="src/org/apache/cordova/device" /> -->
+        <source-file src="src/android/VerifyAutomaticDateTimeZone.java" target-dir="src/com/edsonhoraciojunior/verifyautomaticdatetimezone" />
     </platform>
 
-    <!-- ios -->
+    <!-- ios aguardando sucesso no android porenquanto
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="Device">
-                <param name="ios-package" value="CDVDevice"/>
+            <feature name="VerifyAutomaticDateTimeZone">
+                <param name="ios-package" value="VerifyAutomaticDateTimeZone"/>
             </feature>
         </config-file>
 
-        <header-file src="src/ios/CDVDevice.h" />
-        <source-file src="src/ios/CDVDevice.m" />
-    </platform>
+        <header-file src="src/ios/VerifyAutomaticDateTimeZone.h" />
+        <source-file src="src/ios/VerifyAutomaticDateTimeZone.m" />
+    </platform>-->
 
-    <!-- windows -->
+    <!-- windows
     <platform name="windows">
         <js-module src="src/windows/DeviceProxy.js" name="DeviceProxy">
             <runs />
         </js-module>
-    </platform>
+    </platform>-->
 
-    <!-- browser -->
+    <!-- browser
     <platform name="browser">
         <config-file target="config.xml" parent="/*">
             <feature name="Device">
@@ -75,9 +77,9 @@
         <js-module src="src/browser/DeviceProxy.js" name="DeviceProxy">
             <runs />
         </js-module>
-    </platform>
+    </platform>-->
 
-    <!-- osx -->
+    <!-- osx
     <platform name="osx">
         <config-file target="config.xml" parent="/*">
             <feature name="Device">
@@ -87,7 +89,7 @@
 
         <header-file src="src/osx/CDVDevice.h" />
         <source-file src="src/osx/CDVDevice.m" />
-    </platform>
+    </platform>-->
 
 
 </plugin>
