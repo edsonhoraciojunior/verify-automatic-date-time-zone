@@ -1,5 +1,6 @@
 package com.edsonhoraciojunior.verifyautomaticdatetimezone;
 
+import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
@@ -10,6 +11,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.provider.Settings;
 import android.os.Build;
+import android.util.Log;
 
 public class VerifyAutomaticDateTimeZone extends CordovaPlugin {
     public static final String TAG = "VerifyAutomaticDateTimeZone";
@@ -42,48 +44,27 @@ public class VerifyAutomaticDateTimeZone extends CordovaPlugin {
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if ("isAutomaticChecked".equals(action)) {
-            boolean result = this.isAutomaticChecked();
-            callbackContext.success(result);
+            JSONArray json = new JSONArray();
+
+            try {
+                boolean result = this.isAutomaticChecked();
+                json.put(0, result);
+            } catch (Settings.SettingNotFoundException e) {
+                json.put(0, "SettingNotFoundException");
+            }
+
+            callbackContext.success(json);
         } else {
             return false;
         }
         return true;
     }
 
-    private static boolean isAutomaticChecked() throws Settings.SettingNotFoundException {
+    private boolean isAutomaticChecked() throws Settings.SettingNotFoundException {
 
         Integer dateTime, timezone;
 
-        Activity activity = cordova.getActivity();
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            dateTime = Settings.Global.getInt(activity.getContentResolver(), Settings.Global.AUTO_TIME, 0);
-            timezone = Settings.Global.getInt(activity.getContentResolver(), Settings.Global.AUTO_TIME_ZONE, 0);
-
-        } else {
-            dateTime = android.provider.Settings.System.getInt(
-                activity.getContentResolver(),
-                android.provider.Settings.System.AUTO_TIME_ZONE,
-                0
-            );
-
-            timezone = android.provider.Settings.System.getInt(
-                activity.getContentResolver(),
-                android.provider.Settings.System.AUTO_TIME,
-                0
-            );
-        }
-
-        if (dateTime == 0 || timezone == 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    private static boolean isAutomaticChecked(Activity activity, Context context) throws Settings.SettingNotFoundException {
-
-        Integer dateTime, timezone;
+        Activity activity = this.cordova.getActivity();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             dateTime = Settings.Global.getInt(activity.getContentResolver(), Settings.Global.AUTO_TIME, 0);

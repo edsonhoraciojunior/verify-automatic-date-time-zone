@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/edsonhoraciojunior/verify-automatic-date-time-zone"
+    "url": "git+https://github.com/edsonhoraciojunior/verify-automatic-date-time-zone.git"
   },
   "keywords": [
     "automatic",
@@ -22,5 +22,11 @@
     "settings"
   ],
   "author": "Edson Horácio Junior",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edsonhoraciojunior/verify-automatic-date-time-zone/issues"
+  },
+  "homepage": "https://github.com/edsonhoraciojunior/verify-automatic-date-time-zone#readme",
+  "dependencies": {},
+  "devDependencies": {}
 }
