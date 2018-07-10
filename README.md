@@ -19,6 +19,12 @@ Returns a boolean indicating if automatic is enabled for date, time and timezone
 ### Quick Example
 
 ```js
-@todo
+window.VerifyAutomaticDateTimeZone.isAutomaticChecked(function(isIt){
+  if (isIt === true) {
+        // do something
+    } else {
+        // do something else
+    }
+});
 ```
 
