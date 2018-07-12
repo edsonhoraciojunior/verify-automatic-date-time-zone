@@ -1,6 +1,6 @@
 {
   "name": "verify-automatic-date-time-zone",
-  "version": "1.0.0-dev",
+  "version": "1.0.1-dev",
   "description": "Verify Automatic Date, Time and Timezone",
   "types": "./types/index.d.ts",
   "cordova": {
