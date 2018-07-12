@@ -59,37 +59,5 @@
         <source-file src="src/ios/VerifyAutomaticDateTimeZone.m" />
     </platform>-->
 
-    <!-- windows
-    <platform name="windows">
-        <js-module src="src/windows/DeviceProxy.js" name="DeviceProxy">
-            <runs />
-        </js-module>
-    </platform>-->
-
-    <!-- browser
-    <platform name="browser">
-        <config-file target="config.xml" parent="/*">
-            <feature name="Device">
-                <param name="browser-package" value="Device" />
-            </feature>
-        </config-file>
-
-        <js-module src="src/browser/DeviceProxy.js" name="DeviceProxy">
-            <runs />
-        </js-module>
-    </platform>-->
-
-    <!-- osx
-    <platform name="osx">
-        <config-file target="config.xml" parent="/*">
-            <feature name="Device">
-                <param name="ios-package" value="CDVDevice"/>
-            </feature>
-        </config-file>
-
-        <header-file src="src/osx/CDVDevice.h" />
-        <source-file src="src/osx/CDVDevice.m" />
-    </platform>-->
-
 
 </plugin>
