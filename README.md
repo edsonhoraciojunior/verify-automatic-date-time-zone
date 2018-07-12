@@ -14,7 +14,6 @@ Returns a boolean indicating if automatic is enabled for date, time and timezone
 ### Supported Platforms
 
 - Android
-- iOS
 
 ### Quick Example
 
@@ -28,3 +27,6 @@ window.VerifyAutomaticDateTimeZone.isAutomaticChecked(function(isIt){
 });
 ```
 
+### iOS not supported
+
+Couldn't find out how to get iOS settings programatically so it's pending
